@@ -8,3 +8,7 @@ This appliation utilizes the github api to pull jobs from github jobs and displa
 #notes
   application is able to pull jobs but is not displaying them yet
   Ran into some problems while trying to set up a non persistant database temporary Redis server for my key value store
+  
+  Redis server is now fully operational and sorting algorith is working
+  
+  Encountering JSON parse error when attempting to display jobs fetched from github
