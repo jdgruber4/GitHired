@@ -14,6 +14,12 @@ const mockJobs = [
 async function fetchJobs(updateCb) {
   const res = await fetch(JOB_API_URL);
   let json = await res.json();
+  //bug fixing json parse error
+  // try {
+  //   await res.json();
+  // } catch(e) {
+  //   console.log('error:', e.message);
+  // }
 
   updateCb(json);
 
