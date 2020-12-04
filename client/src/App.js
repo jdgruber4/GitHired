@@ -3,7 +3,7 @@ import './App.css';
 
 import Jobs from './Jobs';
 
-const JOB_API_URL = '/api/jobs';
+const JOB_API_URL = 'http://localhost:3001/jobs';
 
 const mockJobs = [
   {title: 'SWE 1 ', company: 'Google'},
@@ -14,12 +14,7 @@ const mockJobs = [
 async function fetchJobs(updateCb) {
   const res = await fetch(JOB_API_URL);
   let json = await res.json();
-  //bug fixing json parse error
-  // try {
-  //   await res.json();
-  // } catch(e) {
-  //   console.log('error:', e.message);
-  // }
+
 
   updateCb(json);
 
