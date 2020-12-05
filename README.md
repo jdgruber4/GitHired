@@ -12,3 +12,7 @@ This appliation utilizes the github api to pull jobs from github jobs and displa
   Redis server is now fully operational and sorting algorith is working
   
   Encountering JSON parse error when attempting to display jobs fetched from github
+
+  Clicking functionality is working now but needs to be properly formated(job deatils are appering too large for the selected view)
+
+
