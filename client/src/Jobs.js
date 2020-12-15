@@ -48,11 +48,11 @@ export default function Jobs({jobs}) {
     return (
         <div className = "jobs">
             <JobModal open={open} job={selectedJob} handleClose={handleClose} />
-
+            <div class= "jobNum">
             <Typography variant="h5" component="h2">
-                Found {numJobs} Jobs
+                Found {numJobs} Job Postings:
             </Typography>
-
+            </div>
             {
                 jobsOnPage.map(
                     (job, i) => <Job key={i} job={job} onClick={() => {

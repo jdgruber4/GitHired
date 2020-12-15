@@ -28,7 +28,7 @@ function App() {
   return (
     <div className="App">
       <Title />
-      <br></br>
+      <br />
       <Jobs jobs={jobList}/>
     </div>
   );

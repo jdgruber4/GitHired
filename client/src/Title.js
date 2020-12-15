@@ -8,6 +8,7 @@ import { fade, makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -64,7 +65,6 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-
 export default function Title() {
   const classes = useStyles();
 
@@ -80,6 +80,7 @@ export default function Title() {
           <Typography className={classes.title} variant="h2" noWrap >
             GitHired
           </Typography>
+          
           <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
