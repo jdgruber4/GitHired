@@ -40,6 +40,7 @@ async function fetchGithub() {
 const jrJobs = allJobs.filter(job => {
     const jobTitle = job.title.toLowerCase();
 
+
     //logic
     if(
         jobTitle.includes('senior') || 

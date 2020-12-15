@@ -6,6 +6,14 @@ import MobileStepper from '@material-ui/core/MobileStepper';
 import Button from '@material-ui/core/Button';
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+
+
+
+
 
 export default function Jobs({jobs}) {
 
@@ -34,17 +42,17 @@ export default function Jobs({jobs}) {
         setActiveStep(prevActiveStep => prevActiveStep - 1);
         
     }
+
     
     console.log('job is', jobs[0]);
     return (
         <div className = "jobs">
             <JobModal open={open} job={selectedJob} handleClose={handleClose} />
-            <Typography variant = 'h4' component="h1">
-                Entry level Software Jobs
-            </Typography>
-            <Typography variant="h6" component="h2">
+
+            <Typography variant="h5" component="h2">
                 Found {numJobs} Jobs
             </Typography>
+
             {
                 jobsOnPage.map(
                     (job, i) => <Job key={i} job={job} onClick={() => {
@@ -63,13 +71,13 @@ export default function Jobs({jobs}) {
                 position="static"
                 activeStep={activeStep}
                 nextButton={
-                    <Button size="small" onClick={handleNext} disabled={activeStep === numPages - 1}>
+                    <Button size="large" onClick={handleNext} disabled={activeStep === numPages - 1}>
                     Next
                     <KeyboardArrowRight />
                     </Button>
                 }
                 backButton={
-                    <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
+                    <Button size="large" onClick={handleBack} disabled={activeStep === 0}>
                     <KeyboardArrowLeft />
                     Back
                     </Button>

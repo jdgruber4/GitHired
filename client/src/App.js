@@ -1,15 +1,10 @@
 import React from 'react';
 import './App.css';
-
 import Jobs from './Jobs';
+import Title from './Title';
 
 const JOB_API_URL = 'http://localhost:3001/jobs';
 
-const mockJobs = [
-  {title: 'SWE 1 ', company: 'Google'},
-  {title: 'SWE 1 ', company: 'Microsoft'},
-  {title: 'SWE 1 ', company: 'Blizzard'}
-]
 
 async function fetchJobs(updateCb) {
   const res = await fetch(JOB_API_URL);
@@ -32,6 +27,8 @@ function App() {
 
   return (
     <div className="App">
+      <Title />
+      <br></br>
       <Jobs jobs={jobList}/>
     </div>
   );

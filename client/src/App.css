@@ -1,13 +1,5 @@
 
 
-
-
-
-
-
-
-
-
 body {
   margin: 20px 40px;
 }
@@ -16,13 +8,14 @@ body {
 
 
 .job {
-  width: 80%;
+  width: 98%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  margin: 20px 0;
-  padding: 20px 10px;
+  margin: 25px 0;
+  padding: 20px 20px;
   align-items: center;
+  
 }
 
 .job:hover {
@@ -41,12 +34,3 @@ body {
   height: 30px;
   float: right;
 }
-
-/* @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
