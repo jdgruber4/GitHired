@@ -37,6 +37,10 @@ body {
 .job-dialog {
   padding: 30px 50px
 }
+.detail-logo{
+  height: 30px;
+  float: right;
+}
 
 /* @keyframes App-logo-spin {
   from {
