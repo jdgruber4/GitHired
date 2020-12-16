@@ -1,6 +1,3 @@
-
-
-
 const { job } = require('cron');
 var fetch = require('node-fetch');
 var redis = require("redis"), 
@@ -45,8 +42,7 @@ const jrJobs = allJobs.filter(job => {
     if(
         jobTitle.includes('senior') || 
         jobTitle.includes('sr.') || 
-        jobTitle.includes('manager') || 
-        jobTitle.includes('architect')
+        jobTitle.includes('manager') 
     ){
         return false;
     }

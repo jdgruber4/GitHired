@@ -6,6 +6,7 @@ import Title from './Title';
 const JOB_API_URL = 'http://localhost:3001/jobs';
 
 
+
 async function fetchJobs(updateCb) {
   const res = await fetch(JOB_API_URL);
   let json = await res.json();

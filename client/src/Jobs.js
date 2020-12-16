@@ -6,16 +6,23 @@ import MobileStepper from '@material-ui/core/MobileStepper';
 import Button from '@material-ui/core/Button';
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import { makeStyles } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
+
 
 
 
 
 
 export default function Jobs({jobs}) {
+
+    React.useEffect(() => {
+        const welcomeItem= document.querySelectorAll('.welcome-item');
+        let delay = 0;
+        welcomeItem.forEach(item => {
+            setTimeout(() => item.style.opacity = 1, delay);
+            delay += 500;
+        })
+    }, []);
+
 
     // modal
     const [open, setOpen] = React.useState(false);
@@ -33,14 +40,26 @@ export default function Jobs({jobs}) {
     const [activeStep, setActiveStep] = React.useState(0);
     const jobsOnPage = jobs.slice(activeStep * 50, (activeStep * 50) + 50);
     
+
+    //after clicking on the next or previous page buttons the web page will be displayed at the top
+    function scrollToTop () {
+        const frame = document.documentElement.scrollTop || document.body.scrollTop;
+        if (frame > 0) {
+          window.requestAnimationFrame(scrollToTop);
+          window.scrollTo(0, frame - frame / 8);
+        }
+      };
+    
+    
     function handleNext() {
         setActiveStep(prevActiveStep => prevActiveStep + 1);
+        scrollToTop();
         
     }
 
     function handleBack() {
         setActiveStep(prevActiveStep => prevActiveStep - 1);
-        
+        scrollToTop();
     }
 
     
@@ -48,11 +67,11 @@ export default function Jobs({jobs}) {
     return (
         <div className = "jobs">
             <JobModal open={open} job={selectedJob} handleClose={handleClose} />
-            <div class= "jobNum">
+
             <Typography variant="h5" component="h2">
                 Found {numJobs} Job Postings:
             </Typography>
-            </div>
+
             {
                 jobsOnPage.map(
                     (job, i) => <Job key={i} job={job} onClick={() => {
